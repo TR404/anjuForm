@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&fim+ft$xi6@97*csqjxf&@_k0%a2*kq3iko83!nm!sht!!ct='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -101,6 +101,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_USE_TLS = True
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT='587'
+EMAIL_HOST_USER='anjalishirure625@gmail.com'
+EMAIL_HOST_PASSWORD='Abhijeet@123'
+EMAIL_USE_TLS=True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -137,9 +145,4 @@ else:
 MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT='587'
-EMAIL_HOST_USER='anjalishirure625@gmail.com'
-EMAIL_HOST_PASSWORD='Abhijeet@123'
-EMAIL_USE_TLS=True
+
